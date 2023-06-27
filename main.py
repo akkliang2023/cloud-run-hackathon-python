@@ -39,7 +39,7 @@ def move():
     if sres["wasHit"]:
         logger.info("hit")
         print("hit")
-        return moves[0]
+        return moves[random.randrange(len(moves))]
     else:
         logger.info("miss")
         print("miss")
@@ -48,7 +48,7 @@ def move():
     
     # TODO add your implementation here to replace the random response
     
-    return moves[1]
+    return moves[random.randrange(len(moves))]
 
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
