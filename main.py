@@ -23,7 +23,8 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 moves = ['F', 'L', 'R', 'T']
-
+score = 0
+ 
 @app.route("/", methods=['GET'])
 def index():
     return "Let the battle begin!"
@@ -37,7 +38,6 @@ def move():
     print(sres)
     logger.info(sres)
     if sres["wasHit"]:
-        score=sres["score"]
         logger.info("hit")
         print("hit")
         logger.info("move")
@@ -45,10 +45,7 @@ def move():
     else:
         logger.info("miss")
         print("miss")
-        if sres["score"] == score:
-            logger.info("move")
-            score=sres["score"]
-            return moves[random.randrange(3)]            
+        print(sres["score"])     
         return moves[0]
     
     
