@@ -44,13 +44,13 @@ def move():
         if sres["x"] == 0 and sres["direction"] != "E":
             logger.info("trun")
             return moves[1] #trun left
-        if sres["x"] == 5 and sres["direction"] != "W":
+        if sres["x"] == 8 and sres["direction"] != "W":
             logger.info("trun")
             return moves[1] #trun left
         if sres["y"] == 0 and sres["direction"] != "S":
             logger.info("trun")
             return moves[1] #trun left
-        if sres["y"] == 8 and sres["direction"] != "N":
+        if sres["y"] == 5 and sres["direction"] != "N":
             logger.info("trun")
             return moves[1] #trun left
 
@@ -63,13 +63,13 @@ def move():
         if sres["x"] == 0 and sres["direction"] != "W":
             logger.info("trun")
             return moves[1] #trun left
-        if sres["x"] == 5 and sres["direction"] != "E":
+        if sres["x"] == 8 and sres["direction"] != "E":
             logger.info("trun")
             return moves[1] #trun left
         if sres["y"] == 0 and sres["direction"] != "N":
             logger.info("trun")
             return moves[1] #trun left
-        if sres["y"] == 8 and sres["direction"] != "S":
+        if sres["y"] == 5 and sres["direction"] != "S":
             logger.info("trun")
             return moves[1] #trun left
 
