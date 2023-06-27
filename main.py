@@ -40,15 +40,38 @@ def move():
     if sres["wasHit"]:
         logger.info("hit")
         print("hit")
+        #excape from sides
+        if sres["x"] == 0 and sres["direction"] != "E":
+            logger.info("trun")
+            return moves[1] #trun left
+        if sres["x"] == 9 and sres["direction"] != "W":
+            logger.info("trun")
+            return moves[1] #trun left
+        if sres["y"] == 0 and sres["direction"] != "S":
+            logger.info("trun")
+            return moves[1] #trun left
+        if sres["y"] == 9 and sres["direction"] != "N":
+            logger.info("trun")
+            return moves[1] #trun left
+
         logger.info("move")
-        return moves[random.randrange(3)]
+        return moves[0]
     else:
         logger.info("miss")
         print("miss")
-        print(sres["score"])     
-        if sres["x"] == 0 or sres["x"] == 9 or sres["y"] == 0 or sres["y"] == 9:
-            logger.info(sres)
-            return moves[random.randrange(3)]
+        print(sres["score"])
+        if sres["x"] == 0 and sres["direction"] != "W":
+            logger.info("trun")
+            return moves[1] #trun left
+        if sres["x"] == 9 and sres["direction"] != "E":
+            logger.info("trun")
+            return moves[1] #trun left
+        if sres["y"] == 0 and sres["direction"] != "N":
+            logger.info("trun")
+            return moves[1] #trun left
+        if sres["y"] == 9 and sres["direction"] != "S":
+            logger.info("trun")
+            return moves[1] #trun left
         logger.info("Throw")
         return moves[3]
     
