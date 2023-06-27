@@ -41,14 +41,14 @@ def move():
         logger.info("hit")
         print("hit")
         logger.info("move")
-        return moves[random.randrange(3))]
+        return moves[random.randrange(3)]
     else:
         logger.info("miss")
         print("miss")
-        if sres["score"] == score
+        if sres["score"] == score:
             logger.info("move")
             score=sres["score"]
-            return moves[random.randrange(3))]            
+            return moves[random.randrange(3)]            
         return moves[0]
     
     
