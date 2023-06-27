@@ -22,7 +22,7 @@ logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-moves = ['F', 'T', 'L', 'R']
+moves = ['F', 'L', 'R', 'T']
 
 @app.route("/", methods=['GET'])
 def index():
@@ -37,13 +37,19 @@ def move():
     print(sres)
     logger.info(sres)
     if sres["wasHit"]:
+        score=sres["score"]
         logger.info("hit")
         print("hit")
-        return moves[random.randrange(len(moves))]
+        logger.info("move")
+        return moves[random.randrange(3))]
     else:
         logger.info("miss")
         print("miss")
-        return moves[1]
+        if sres["score"] == score
+            logger.info("move")
+            score=sres["score"]
+            return moves[random.randrange(3))]            
+        return moves[0]
     
     
     # TODO add your implementation here to replace the random response
