@@ -73,12 +73,8 @@ def move():
             logger.info("trun")
             return moves[1] #trun left
 
-    if random.choice([True,False]):
-        logger.info("move")
-        return moves[random.randrange(3)]
-    else:
-        logger.info("Throw")
-        return moves[3]
+    logger.info("Throw")
+    return moves[3]
     
     
     # TODO add your implementation here to replace the random response
