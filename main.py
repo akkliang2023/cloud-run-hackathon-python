@@ -31,11 +31,11 @@ def index():
 @app.route("/", methods=['POST'])
 def move():
     request.get_data()
-    logger.info(request.json)
+    # logger.info(request.json)
     
     # TODO add your implementation here to replace the random response
-    selfstate = request.json
-    logger.info('selfstate '+selfstate._link)
+    res=request.json["_links"]["self"]
+    print(res)
 
     return moves[random.randrange(len(moves))]
 
