@@ -31,12 +31,19 @@ def index():
 @app.route("/", methods=['POST'])
 def move():
     request.get_data()
-    # logger.info(request.json)
+    logger.info(request.json)
+    
+    sres=request.json["arena"]["state"]["https://cloud-run-hackathon-python-kt5uau5seq-uc.a.run.app"]
+    print(sres)
+    if sres["wasHit"]:
+        print("hit")
+        return moves[0]
+    else:
+        print("miss")
+    
     
     # TODO add your implementation here to replace the random response
-    res=request.json["_links"]["self"]
-    print(res)
-
+    
     return moves[random.randrange(len(moves))]
 
 if __name__ == "__main__":
