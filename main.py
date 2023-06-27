@@ -72,6 +72,11 @@ def move():
         if sres["y"] == 9 and sres["direction"] != "S":
             logger.info("trun")
             return moves[1] #trun left
+
+    if random.choice([True,False]):
+        logger.info("move")
+        return moves[random.randrange(3)]
+    else:
         logger.info("Throw")
         return moves[3]
     
