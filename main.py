@@ -31,6 +31,7 @@ def index():
 
 @app.route("/", methods=['POST'])
 def move():
+    print(score)
     request.get_data()
     #logger.info(request.json)
     
@@ -46,7 +47,9 @@ def move():
         logger.info("miss")
         print("miss")
         print(sres["score"])     
-        return moves[0]
+        if random.choice([True, False]):
+            return moves[random.randrange(3)]
+        return moves[3]
     
     
     # TODO add your implementation here to replace the random response
