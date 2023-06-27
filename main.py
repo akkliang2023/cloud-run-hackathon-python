@@ -37,7 +37,6 @@ def move():
     
     sres=request.json["arena"]["state"]["https://cloud-run-hackathon-python-kt5uau5seq-uc.a.run.app"]
     print(sres)
-    logger.info(sres)
     if sres["wasHit"]:
         logger.info("hit")
         print("hit")
@@ -47,8 +46,10 @@ def move():
         logger.info("miss")
         print("miss")
         print(sres["score"])     
-        if random.choice([True, False]):
+        if sres["x"] == 0 or sres["x"] == 9 or sres["y"] == 0 or sres["y"] == 9:
+            logger.info(sres)
             return moves[random.randrange(3)]
+        logger.info("Throw")
         return moves[3]
     
     
