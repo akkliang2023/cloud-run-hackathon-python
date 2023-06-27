@@ -34,7 +34,9 @@ def move():
     logger.info(request.json)
     
     # TODO add your implementation here to replace the random response
-    
+    selfstate = request.json._links
+    logger.info('selfstate '+selfstate)
+
     return moves[random.randrange(len(moves))]
 
 if __name__ == "__main__":
